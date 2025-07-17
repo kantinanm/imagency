@@ -1,0 +1,31 @@
+{% extends 'pages/base.html' %}
+
+{% block header %}
+  <h2>{% block title %}Flask QR-CODE Demo{% endblock title %}</h2>
+{% endblock header %}
+
+{% block content %}
+
+    <div class="row" style="margin-top: 70px;">
+      <div class="col-xl-12">
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" data-target="#tab1" data-toggle="tab" href="#">Tab1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-target="#tab2" data-toggle="tab" href="#">Tab2</a>
+          </li>
+        </ul>
+        <div id="tabsContent" class="tab-content">
+            <div id="tab1" class="tab-pane fade show active"> 
+                <h1>Tab1 Content</h1>
+            </div>
+            <div id="tab2" class="tab-pane fade">
+                <h1>Tab2 Content</h1>
+            </div>
+        </div>
+
+      </div>
+    </div>
+
+{% endblock content %}

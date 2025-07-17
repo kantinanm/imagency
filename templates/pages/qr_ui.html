@@ -1,0 +1,74 @@
+{% extends 'pages/base.html' %}
+
+{% block header %}
+  <h2>{% block title %}Flask QR-CODE Demo{% endblock title %}</h2>
+{% endblock header %}
+
+{% block content %}
+
+    <div class="row" style="margin-top: 70px;">
+      <div class="col-xl-12">
+        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+          Process QR Code
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-12">
+          <p>Hello, <span id="msg"></span></p>
+          <br/>
+          <canvas id="canvas-chart"  style="display: none;"></canvas>
+      </div>
+    </div>
+
+{% endblock content %}
+{% block js %}
+<script>
+  $(document).ready(function() {
+
+    var data = JSON.parse('{{ data | tojson | safe}}');
+    document.getElementById('msg').innerHTML=data.message;
+
+    console.log("Raw Data: ");
+    console.log(data.raw_data);
+    
+    if(data.raw_data) {
+      var canvas = document.getElementById('canvas-chart');
+      var ctx = canvas.getContext('2d');
+      var img = new Image();
+      // img.src = data.raw_data;
+      img.src = "data:image/png;base64," + data.raw_data;
+      img.onload = function() {
+        // Set canvas dimensions to match the image
+        console.log("Image loaded successfully.");
+        console.log("Image dimensions: " + img.width + "x" + img.height);
+        console.log("Canvas dimensions: " + canvas.width + "x" + canvas.height);
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        canvas.style.display = 'block';
+      };
+
+      img.onerror = function() {
+        console.error("Failed to load image from base64 data.");
+      };
+    }
+
+
+    $('button').click(function() {
+      $.ajax({
+        url: '/generate',
+        type: 'GET',
+        success: function(response) {
+          alert('QR Code generated successfully!');
+          console.log(response);
+        },
+        error: function(error) {
+          alert('Error generating QR Code.');
+          console.error(error);
+        }
+      });
+    });
+  });
+  </script>
+{% endblock js %}

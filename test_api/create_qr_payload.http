@@ -1,0 +1,9 @@
+POST /api/v1/generate HTTP/1.1
+HOST: localhost:8000
+Content-type: application/json
+
+{
+    "url":"https://www.eng.nu.ac.th",
+    "token":"dc00cc7557257198e9bbcd1267074db762d104da82f2392a2605fd7ea6ee25c0",
+    "back_color":"Pink"
+}
