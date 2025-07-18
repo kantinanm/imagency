@@ -1,4 +1,4 @@
-from flask import Blueprint, request ,jsonify, redirect, render_template, abort
+from flask import Blueprint, request,current_app ,jsonify, redirect, render_template, abort
 from dotenv import load_dotenv
 load_dotenv()
 import os
@@ -27,6 +27,7 @@ def tab():
 
 @bp.route('/generate', methods=['GET'])
 def generate():
+    current_app.logger.info("executed generate.")
     raw_data = utility.generate_qr()
     return jsonify({'ok':'true',"message": "QR Code generated successfully", "raw_data": raw_data}), 200
 

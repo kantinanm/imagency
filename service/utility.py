@@ -54,7 +54,7 @@ def generate_qr_v2(options):
 
     #print(type(options['version']))
 
-    qr = qrcode.QRCode(version=int(options['version']),
+    qr = qrcode.QRCode(version=int(options['qr_version']),
                     error_correction=qrcode.constants.ERROR_CORRECT_L,
                     box_size=int(options['box_size']),
                     border=int(options['border']) if 'border' in options else 4)

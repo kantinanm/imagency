@@ -9,7 +9,7 @@ REST API by Flask , Tracking system implementation
 Use powershell or cmd and type by order, please see below.
 
 - `git clone https://gitlab.com/kantinanm/imagency.git`
-- `cd taskmgnt`
+- `cd imagency`
   If you are running Python version below 3.4, You must execute command below:
 - `pip install virtualenv`
   If you are running Python 3.4+, you can use the venv module baked into Python:
@@ -71,7 +71,7 @@ Windows
 
 # Sample run
 
-- `python app.py`
+- `flask run`
 
 # How to test
 
@@ -81,6 +81,7 @@ Windows
 - http://localhost:5000/home
 - http://localhost:5000/about
 - http://localhost:5000/api/v1/generate
+- http://localhost:5000/api/v1/info
 
 # How to deactivate venv
 
@@ -93,8 +94,9 @@ Windows
 - `BACK_COLOR="GreenYellow"`
 - `BOX_SIZE=8`
 - `BORDER=4`
-- `VERSION=3`
+- `QR_VERSION=3`
 - `SECRET_KEY="xxx"`
+- `JWT_SECRET_KEY="xxx"`
 
 # How to run gunicorn
 

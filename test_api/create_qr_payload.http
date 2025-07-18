@@ -3,7 +3,11 @@ HOST: localhost:8000
 Content-type: application/json
 
 {
+    "nunet":"anonymous",
     "url":"https://www.eng.nu.ac.th",
-    "token":"dc00cc7557257198e9bbcd1267074db762d104da82f2392a2605fd7ea6ee25c0",
-    "back_color":"Pink"
+    "ref_id":"6861",
+    "secret":"EihAe6AZxe0XDPUbsdlFbLijiWJwxySXQmFdqO5xEAw=",
+    "workcode":"ENV123/2568",
+    "back_color":"Violet",
+    "fill_color":"Pink"
 }

@@ -18,3 +18,4 @@ py_log.log
 *.whl
 
 logs/*.log
+*.log
