@@ -1,0 +1,6 @@
+{
+  "debug": "Missing JWT in headers or query_string (Missing Authorization Header; Missing 'jwt' query paramater)",
+  "error": "authorization_header",
+  "message": "Request doesnt contain valid token",
+  "status": false
+}

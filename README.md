@@ -82,6 +82,7 @@ Windows
 - http://localhost:5000/about
 - http://localhost:5000/api/v1/generate
 - http://localhost:5000/api/v1/info
+- http://localhost:5000/api/v1/info?jwt={value}
 
 # How to deactivate venv
 
